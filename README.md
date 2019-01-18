@@ -1,6 +1,8 @@
 # React, Apollo, GraphQL & SpaceX API
 A little SpaceX API, GraphQL, Apollo &amp; React web app
 
+![Alt text](/screenshot.png?raw=true "Optional Title")
+
 ## Instalation 
 
 ```
