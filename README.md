@@ -22,3 +22,7 @@ cd client && npm run build
 
 # Graphiql - http://localhost:5000/graphql
 ```
+
+## Thanks 
+
+Thanks to Brad at [traversymedia](http://www.traversymedia.com/) for the awesome [Youtube Tutorial](https://www.youtube.com/watch?v=SEMTj8w04Z8)
