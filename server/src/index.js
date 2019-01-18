@@ -1,18 +1,17 @@
-const express = require('express');
-const graphqlHTTP = require('express-graphql');
-const schema = require('./schema');
-const cors = require('cors');
+const { ApolloServer } = require("apollo-server");
+const typeDefs = require("./schema");
+const resolvers = require("./resolvers");
 
-const app = express();
+// In the most basic sense, the ApolloServer can be started
+// by passing type definitions (typeDefs) and the resolvers
+// responsible for fetching the data for those types.
+const server = new ApolloServer({
+  typeDefs,
+  resolvers
+});
 
-// Allow cross-origin from client
-app.use(cors());
-
-app.use('/graphql', graphqlHTTP({
-    schema,
-    graphiql: true
-}));
-
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => console.log(`Server is runnin on ${PORT}`));
+// This `listen` method launches a web-server.  Existing apps
+// can utilize middleware options, which we'll discuss later.
+server.listen().then(({ url }) => {
+  console.log(`🚀  Server ready at ${url}`);
+});

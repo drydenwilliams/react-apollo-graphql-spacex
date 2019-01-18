@@ -26,4 +26,4 @@ cd client && npm run build
 
 ## Thanks 
 
-Thanks to Brad at [traversymedia](http://www.traversymedia.com/) for the awesome [Youtube Tutorial](https://www.youtube.com/watch?v=SEMTj8w04Z8)
+Originally I used this awesome Tutorial from Brad at [traversymedia](http://www.traversymedia.com/) which was great. Then I've replaced the `GraphQLSchema` API with the style in the [Apollo docs].(https://www.apollographql.com/docs/apollo-server/essentials/data.html)
