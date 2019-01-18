@@ -1,8 +1,6 @@
 import React, { Component, Fragment } from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
-import { Link } from "react-router-dom";
-import classnames from "classnames";
 
 const LAUNCH_QUERY = gql`
   query LaunchQuery($flight_number: Int!) {
@@ -43,6 +41,12 @@ export class Launch extends Component {
                 } = data.launch;
                   return <div>
                       <h1>Mission: {mission_name}</h1>
+                      <ul>
+                        <li>{`Flight number: ${flight_number}`}</li>
+                        <li>{`Launch year: ${launch_year}`}</li>
+                        <li>{`Launch success: ${launch_success}`}</li>
+                        <li>{`Rocket ID: ${rocket_id}`}</li>
+                      </ul>
                   </div>
               }
           }

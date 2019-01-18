@@ -15,7 +15,7 @@ export default function LaunchItem({
         <div className="row">
             <div className="col-md-9">
             <h4>
-                Mission: 
+                <span>Mission: </span>
                 <span className={classnames({
                     'text-success': launch_success,
                     'text-danger': !launch_success

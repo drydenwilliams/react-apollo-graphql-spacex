@@ -5,17 +5,18 @@ A little SpaceX API, GraphQL, Apollo &amp; React web app
 
 ```
 # Install dependencies (server & client)
-npm install
-cd client && npm install
+npm i
+npm run install:server
+npm run install:client
 
-# Run server & client (:3000 & :5000)
-npm run dev
+# Run server & client (:5000 & :3000)
+npm run start
 
 # Server only (:5000)
-npm run server
+npm run start:server
 
 # Client only (:3000)
-npm run client
+npm run start:client
 
 # Build for production (Builds into server ./public)
 cd client && npm run build
