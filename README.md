@@ -3,7 +3,22 @@ A little SpaceX API, GraphQL, Apollo &amp; React web app
 
 ## Instalation 
 
-1. Install server dependencies `npm i` in the root
-2. In anther tab start install the client dependencies `cd client && npm i`
-3. In the root tab, run `npm run dev` which will concurrently run the Express Server and Client
+```
+# Install dependencies (server & client)
+npm install
+cd client && npm install
 
+# Run server & client (:3000 & :5000)
+npm run dev
+
+# Server only (:5000)
+npm run server
+
+# Client only (:3000)
+npm run client
+
+# Build for production (Builds into server ./public)
+cd client && npm run build
+
+# Graphiql - http://localhost:5000/graphql
+```
