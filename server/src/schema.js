@@ -23,12 +23,17 @@ const typeDefs = gql`
     launch_date_local: String
     launch_success: Boolean
     rocket: RocketType
+    launch_site: LaunchSite
   }
 
   type RocketType {
     rocket_id: String
     rocket_name: String
     rocket_type: String
+  }
+
+  type LaunchSite {
+    site_name_long: String
   }
 `;
 

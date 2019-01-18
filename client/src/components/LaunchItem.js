@@ -7,7 +7,8 @@ export default function LaunchItem({
         flight_number, 
         mission_name, 
         launch_date_local, 
-        launch_success 
+        launch_success,
+        site_name_long
     }
 }) {
   return (
@@ -21,11 +22,13 @@ export default function LaunchItem({
                     'text-danger': !launch_success
                 })}>{mission_name}</span>
             </h4>
+            <p>{`Date: ${launch_date_local}`}</p>
+            {site_name_long}
             </div>
             <div className="col-md-3 text-right">
                 <Link 
                     to={`/launch/${flight_number}`}
-                    className="btn btn-secondary"
+                    className="btn btn-primary"
                 >
                     Launch details
                 </Link>

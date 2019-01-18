@@ -13,6 +13,8 @@ const LAUNCH_QUERY = gql`
       launch_success
       rocket {
         rocket_id
+        rocket_name,
+        rocket_type
       }
     }
   }
@@ -35,7 +37,11 @@ export class Launch extends Component {
               flight_number,
               launch_year,
               launch_success,
-              rocket: { rocket_id }
+              rocket: { 
+                rocket_id,
+                rocket_name,
+                rocket_type
+              }
             } = data.launch;
             return (
               <div>
@@ -45,8 +51,12 @@ export class Launch extends Component {
                   <li>{`Launch year: ${launch_year}`}</li>
                   <li>{`Launch success: ${launch_success}`}</li>
                   <li>{`Rocket ID: ${rocket_id}`}</li>
+                  <li>{`Rocket Name: ${rocket_name}`}</li>
+                  <li>{`Rocket Type: ${rocket_type}`}</li>
+                  
                 </ul>
-                <Link to="/">Back</Link>
+                <button className="btn btn-primary">Get more info</button>
+                <Link to="/" className="btn btn-secondary">Back</Link>
               </div>
             );
           }}
