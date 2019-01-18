@@ -22,7 +22,7 @@ export default function LaunchItem({
                 })}>{mission_name}</span>
             </h4>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-3 text-right">
                 <Link 
                     to={`/launch/${flight_number}`}
                     className="btn btn-secondary"
