@@ -8,7 +8,7 @@ import './index.css';
 
 import * as serviceWorker from './serviceWorker';
 
-import Launches from "./components/Launches";
+import LaunchesContainer from "./containers/LaunchesContainer";
 import Launch from "./components/Launch";
 
 const client = new ApolloClient({
@@ -22,7 +22,7 @@ class App extends Component {
         <Router>
           <div className="App">
             <div className="container">
-              <Route exact path="/" component={Launches} />
+              <Route exact path="/" component={LaunchesContainer} />
               <Route exact path="/launch/:flight_number" component={Launch} />
             </div>
           </div>
