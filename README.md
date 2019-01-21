@@ -37,18 +37,23 @@ cd client && npm run build
 
 **NOTE:** It’s possible to use Apollo Server with all popular HTTP servers like [Express](https://expressjs.com/).
 
-### What is Apollo Server?
-
-Apollo Server is an implimentation on how to hook a server up to the GraphQL layer.
-
 ### What is Apollo Client?
 
 Apollo Client is an implimentation on how to hook your GraphQL layer up to your client/web app or app. 
 
 It allows you to use some helpful packages like: `apollo-boost`, `react-apollo` and `graphql` that helps connect your GraphQL layer with your client or website/app to React.
 
-### Why is GraphQL so good?
-### 
+### Why is GraphQL?
+
+Good points:
+* Auto API documentation through it's GraphiQL
+* Nice `JSON` style querying
+* Fetch multiple sources in one query
+
+Questions I still have:
+* What happends if the payload is really big, over mobile connection. Using `Query` component wouldn't load anything for a while? Would you split the queries up?
+* Do you put your application state within the Apollo cache?
+* Do I hook up Redux for Application state? Leaving Apollo for Server side/ API stuff
 
 ## Thanks 
 
