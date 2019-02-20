@@ -50,7 +50,13 @@ Good points:
 * Nice `JSON` style querying
 * Fetch multiple sources in one query
 
-Questions I still have:
+### What is a fragment?
+
+### What is an interface?
+
+
+
+## Questions I still have:
 * What happends if the payload is really big, over mobile connection. Using `Query` component wouldn't load anything for a while? Would you split the queries up?
 * Do you put your application state within the Apollo cache?
 * Do I hook up Redux for Application state? Leaving Apollo for Server side/ API stuff
