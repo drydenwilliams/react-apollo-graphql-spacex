@@ -82,7 +82,7 @@ this is telling is what parameters we could pass to the services query. We don't
 
 If we would like to use explore this query and see what is returned can do this:
 
-```
+```gql
 {
   services {
     nodes {
@@ -101,7 +101,7 @@ If we don't know what fields are returned or we can access. You can press `ctrl`
 
 When you want to pass in some parameters to the query you can find out which ones it accepts, you can do something like this:
 
-```
+```gql
 {
   services(<CTRL+SPACE here>) {
     nodes {
@@ -113,7 +113,7 @@ When you want to pass in some parameters to the query you can find out which one
 
 this would say we could add the `categories` arguments to the query (the docs also says this). 
 
-```
+```gql
 {
   services(categories: <CTRL+SPACE here>) {
     nodes {
@@ -126,7 +126,7 @@ this would say we could add the `categories` arguments to the query (the docs al
 Then to see what the options are we could do the `ctrl` + `space` after the `:` to show more options. And end up with something like this:
 
 
-```
+```gql
 {
   services(categories: VEHICLES) {
     nodes {
@@ -138,7 +138,7 @@ Then to see what the options are we could do the `ctrl` + `space` after the `:` 
 
 If we run these queries we would get something back like this: 
 
-```
+```gql
 {
   "data": {
     "services": {
@@ -162,7 +162,7 @@ If we run these queries we would get something back like this:
 
 If we would like to pass in a dynamic argument we could call the query `namedQueryWithArgs('STATUS')` which would pass that to the `services` query.
 
-```
+```gql
 query namedQueryWithArgs(
   $status: ServiceStateType
 ) {
