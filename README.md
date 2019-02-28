@@ -64,3 +64,112 @@ Good points:
 ## Thanks 
 
 Originally I used this awesome Tutorial from Brad at [traversymedia](http://www.traversymedia.com/) which was great. Then I've replaced the `GraphQLSchema` API with the style in the [Apollo docs].(https://www.apollographql.com/docs/apollo-server/essentials/data.html)
+
+## Using GraphQL Playground
+
+### Default query
+
+Say we had an exsisting `services` query. We've opened it up in the GraphQL Playground and found it in the "docs" tab. We might see something like this: 
+
+```gql
+services(
+ status: ServiceStatus
+ categories: [ServiceCategory!]
+)
+```
+
+this is telling is what parameters we could pass to the services query. We don't acutally in this case have to send anything. If there is no exclamation mark `!` at the end it is **note** required. e.g. `ServiceStatus!` or `[ServiceCategory!]!`.
+
+If we would like to use explore this query and see what is returned can do this:
+
+```
+{
+  services {
+    nodes {
+      id
+    }
+  }
+}
+```
+
+**NOTE:** please not running this without the `id` will error. You will need to specify a field to return.
+
+If we don't know what fields are returned or we can access. You can press `ctrl` + `space` in between the `{}` to get a popup of all the options like: `id` (you'll probably always get an `id` back.
+
+
+### query with parameters
+
+When you want to pass in some parameters to the query you can find out which ones it accepts, you can do something like this:
+
+```
+{
+  services(<CTRL+SPACE here>) {
+    nodes {
+      id
+    }
+  }
+}
+```
+
+this would say we could add the `categories` arguments to the query (the docs also says this). 
+
+```
+{
+  services(categories: <CTRL+SPACE here>) {
+    nodes {
+      id
+    }
+  }
+}
+```
+
+Then to see what the options are we could do the `ctrl` + `space` after the `:` to show more options. And end up with something like this:
+
+
+```
+{
+  services(categories: VEHICLES) {
+    nodes {
+      id
+    }
+  }
+}
+```
+
+If we run these queries we would get something back like this: 
+
+```
+{
+  "data": {
+    "services": {
+       "nodes": [
+          {
+            "id": "259510d7-5373-47d2-bfff-b4fe7f78f3bc",
+            "title": "API VEHICLES 1550485204193"
+          },
+          {
+            "id": "618da880-fc41-4c8c-9bc6-74a35e914802",
+            "title": "API VEHICLES 1550485210501"
+          },
+       ]
+    }
+  }
+}
+```
+
+
+### query with args
+
+If we would like to pass in a dynamic argument we could call the query `namedQueryWithArgs('STATUS')` which would pass that to the `services` query.
+
+```
+query namedQueryWithArgs(
+  $status: ServiceStateType
+) {
+  services(status: $status) {
+    nodes {
+      id
+    }
+  }
+}
+```
